@@ -1,0 +1,51 @@
+---
+import ActionCard from './ActionCard.astro';
+
+const actions = [
+  {
+    title: "Donate",
+    description: "Every dollar helps spread Emily's message to voters across Elkhorn.",
+    icon: "heart" as const,
+    buttonText: "Contribute",
+    buttonUrl: "https://secure.actblue.com/donate/emilyforelkhorn"
+  },
+  {
+    title: "Volunteer",
+    description: "Join our team of dedicated supporters making a difference.",
+    icon: "users" as const,
+    buttonText: "Sign Up",
+    buttonUrl: "#volunteer-form"
+  },
+  {
+    title: "Yard Sign",
+    description: "Show your support in your neighborhood with a campaign sign.",
+    icon: "home" as const,
+    buttonText: "Request Sign",
+    buttonUrl: "#yard-sign-form"
+  }
+];
+---
+
+<section id="action" class="py-(--space-3xl) px-(--space-m) bg-red relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-red via-red to-red-dark"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+
+  <div class="max-w-(--container-xl) mx-auto relative z-10">
+    <div class="text-center mb-(--space-xl)">
+      <span class="text-white/70 font-semibold text-sm tracking-[0.2em] uppercase">Take Action</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-4">
+        Get Involved
+      </h2>
+      <p class="text-white/80 mt-4 max-w-2xl mx-auto">
+        Join the movement for strong schools and a strong community.
+        Every contribution makes a difference.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {actions.map(action => (
+        <ActionCard {...action} />
+      ))}
+    </div>
+  </div>
+</section>

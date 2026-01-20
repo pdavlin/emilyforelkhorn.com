@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import logoImage from '../assets/efe-logo.png';
+
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { size = 'md' } = Astro.props;
+const sizes = { sm: 40, md: 60, lg: 80 };
+const dimension = sizes[size];
+---
+
+<Image
+  src={logoImage}
+  alt="Emily for Elkhorn"
+  width={dimension}
+  height={dimension}
+  class="logo"
+/>
+
+<style>
+  .logo {
+    object-fit: contain;
+  }
+</style>

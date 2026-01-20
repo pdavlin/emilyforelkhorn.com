@@ -1,0 +1,58 @@
+---
+import PriorityCard from './PriorityCard.astro';
+
+const priorities = [
+  {
+    number: "01",
+    title: "Accountable Governance",
+    description: "Transparent decision-making that serves our students and community.",
+    bullets: ["Open board meetings", "Clear financial reporting", "Community input sessions"],
+    variant: "navy" as const,
+    featured: true
+  },
+  {
+    number: "02",
+    title: "Educational Excellence",
+    description: "Maintaining high academic standards across all schools.",
+    bullets: ["Rigorous curriculum", "Teacher support", "Student achievement"],
+    variant: "red" as const
+  },
+  {
+    number: "03",
+    title: "Responsible Growth",
+    description: "Planning for enrollment growth without compromising quality.",
+    bullets: ["Facility planning", "Class size management", "Resource allocation"],
+    variant: "dark" as const
+  },
+  {
+    number: "04",
+    title: "Future-Ready Students",
+    description: "Preparing students for careers and citizenship.",
+    bullets: ["Career pathways", "Technology skills", "Critical thinking"],
+    variant: "navy" as const
+  },
+  {
+    number: "05",
+    title: "Community Partnership",
+    description: "Building bridges between schools and families.",
+    bullets: ["Parent engagement", "Local business connections", "Volunteer programs"],
+    variant: "red" as const
+  }
+];
+---
+
+<section id="priorities" class="py-(--space-3xl) px-(--space-m) bg-cream">
+  <div class="max-w-(--container-xl) mx-auto">
+    <div class="text-center mb-(--space-xl)">
+      <span class="text-section-label">Campaign Platform</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mt-4">
+        Priorities for Elkhorn
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {priorities.map(priority => (
+        <PriorityCard {...priority} />
+      ))}
+    </div>
+  </div>
+</section>
