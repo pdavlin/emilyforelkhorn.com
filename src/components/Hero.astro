@@ -1,5 +1,6 @@
 ---
-import Logo from './Logo.astro';
+import { Image } from 'astro:assets';
+import emilyBlue from '../assets/images/emily-blue.jpeg';
 ---
 
 <section id="hero"
@@ -14,14 +15,16 @@ import Logo from './Logo.astro';
         <div
             class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-1"
         >
-            <div class="animate-fade-in-up">
-                <div
-                    class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full text-sm font-semibold
-                           text-navy mb-6 shadow-md
-                           before:content-['2026'] before:bg-red before:text-white before:px-2.5 before:py-1
-                           before:rounded-full before:text-xs before:tracking-wider"
-                >
-                    Elkhorn Board of Education
+            <div class="">
+                <div class="mb-6">
+                    <div class="flex items-center gap-3 text-red text-sm font-semibold tracking-widest uppercase mb-1">
+                        <span class="w-8 h-px bg-red"></span>
+                        <span>2026</span>
+                        <span class="w-8 h-px bg-red"></span>
+                    </div>
+                    <p class="text-navy text-sm font-semibold tracking-widest uppercase">
+                        Elkhorn Board of Education
+                    </p>
                 </div>
                 <h1 class="text-[clamp(3rem,6vw,4.5rem)] font-display font-bold text-navy mb-2 leading-tight">
                     Emily <span class="text-red">Poeschl</span>
@@ -49,47 +52,45 @@ import Logo from './Logo.astro';
                 </div>
             </div>
 
-            <div class="relative animate-fade-in-up-delayed">
+            <div class="relative">
                 <div
-                    class="bg-white rounded-xl p-12 shadow-lg relative
+                    class="rounded-xl overflow-hidden shadow-xl relative
                            before:content-[''] before:absolute before:-top-5 before:-right-5
                            before:w-30 before:h-30 before:bg-red before:rounded-lg before:-z-1"
                 >
-                    <div class="flex flex-col items-center text-center">
-                        <div class="mb-6">
-                            <Logo size="lg" />
-                        </div>
-                        <div
-                            class="font-body font-bold text-base tracking-[0.15em] uppercase text-red"
-                        >
-                            Strong Schools
-                            <span class="block text-navy">Strong Community</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t border-gray-light">
-                        <p
-                            class="text-sm font-semibold text-navy mb-4 tracking-wider uppercase"
-                        >
-                            Quick Chip In:
-                        </p>
-                        <div class="grid grid-cols-4 gap-3">
-                            <a
-                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=10"
-                                class="donate-btn">$10</a
-                            >
-                            <a
-                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=25"
-                                class="donate-btn">$25</a
-                            >
-                            <a
-                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=50"
-                                class="donate-btn">$50</a
-                            >
-                            <a
-                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=100"
-                                class="donate-btn">$100</a
-                            >
+                    <div class="relative">
+                        <Image
+                            src={emilyBlue}
+                            alt="Emily Poeschl"
+                            class="w-full h-auto"
+                            width={560}
+                            height={700}
+                        />
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-6">
+                            <div class="text-center mb-4">
+                                <div class="font-body font-bold text-sm tracking-[0.15em] uppercase text-red">
+                                    Strong Schools
+                                    <span class="text-navy"> / Strong Community</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-4 gap-2">
+                                <a
+                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=10"
+                                    class="donate-btn text-sm">$10</a
+                                >
+                                <a
+                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=25"
+                                    class="donate-btn text-sm">$25</a
+                                >
+                                <a
+                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=50"
+                                    class="donate-btn text-sm">$50</a
+                                >
+                                <a
+                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=100"
+                                    class="donate-btn text-sm">$100</a
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>

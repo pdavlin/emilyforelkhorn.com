@@ -4,24 +4,31 @@ import ActionCard from './ActionCard.astro';
 const actions = [
   {
     title: "Donate",
-    description: "Every dollar helps spread Emily's message to voters across Elkhorn.",
+    description: "Help Emily expand her reach and join others from our area. Emily partners with local businesses and creatives on campaign materials.",
     icon: "heart" as const,
     buttonText: "Contribute",
     buttonUrl: "https://secure.actblue.com/donate/emilyforelkhorn"
   },
   {
     title: "Volunteer",
-    description: "Join our team of dedicated supporters making a difference.",
+    description: "Host a neighborhood meet-and-greet, join Emily canvassing and meeting neighbors, or help reach voters from your home.",
     icon: "users" as const,
     buttonText: "Sign Up",
     buttonUrl: "#volunteer-form"
   },
   {
     title: "Yard Sign",
-    description: "Show your support in your neighborhood with a campaign sign.",
+    description: "Show your support in your neighborhood with a campaign sign in your yard.",
     icon: "home" as const,
     buttonText: "Request Sign",
     buttonUrl: "#yard-sign-form"
+  },
+  {
+    title: "Follow and Share",
+    description: "Follow Emily for Elkhorn on Facebook, Instagram, Threads, and TikTok. Share the news about Emily's campaign!",
+    icon: "share" as const,
+    buttonText: "Find Us",
+    buttonUrl: "https://facebook.com/emilyforelkhorn"
   }
 ];
 ---
@@ -42,7 +49,7 @@ const actions = [
         Every contribution makes a difference.
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {actions.map(action => (
         <ActionCard {...action} />
       ))}

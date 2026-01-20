@@ -4,38 +4,38 @@ import PriorityCard from './PriorityCard.astro';
 const priorities = [
   {
     number: "01",
-    title: "Accountable Governance",
-    description: "Transparent decision-making that serves our students and community.",
-    bullets: ["Open board meetings", "Clear financial reporting", "Community input sessions"],
+    title: "Strategic Leadership, Not Politics",
+    description: "The school board exists to set strategy, steward taxpayer dollars, and ensure accountability—not to manage daily school operations.",
+    bullets: ["Clear long-term direction, not politics", "Oversight, not micromanagement", "Trusting and empowering educators and administrators"],
     variant: "navy" as const,
     featured: true
   },
   {
     number: "02",
-    title: "Educational Excellence",
-    description: "Maintaining high academic standards across all schools.",
-    bullets: ["Rigorous curriculum", "Teacher support", "Student achievement"],
+    title: "Smart Planning for Growth",
+    description: "Elkhorn's top-ranked schools continue to attract new families and fuel community expansion. Growth must be managed thoughtfully.",
+    bullets: ["Intentional, sustainable, and scalable planning", "Prepared for future neighborhoods", "Never at the expense of excellence"],
     variant: "red" as const
   },
   {
     number: "03",
-    title: "Responsible Growth",
-    description: "Planning for enrollment growth without compromising quality.",
-    bullets: ["Facility planning", "Class size management", "Resource allocation"],
+    title: "Access to Education for Every Learner",
+    description: "Strong school governance must ensure equitable access to opportunity and support, so all students can thrive.",
+    bullets: ["Inclusive policies for students with disabilities and diverse learning needs", "Family-centered strategies that respect diverse backgrounds", "Support for early childhood education and school readiness"],
     variant: "dark" as const
   },
   {
     number: "04",
-    title: "Future-Ready Students",
-    description: "Preparing students for careers and citizenship.",
-    bullets: ["Career pathways", "Technology skills", "Critical thinking"],
+    title: "Future-Ready Learners",
+    description: "Preparing students for a world shaped by AI and rapid tech advancement, while keeping critical thinking and academic foundations strong.",
+    bullets: ["Thoughtful investment in modern classroom technology", "Expanded career pathways including skilled trades and healthcare", "Partnerships with local employers to strengthen Elkhorn's workforce"],
     variant: "navy" as const
   },
   {
     number: "05",
-    title: "Community Partnership",
-    description: "Building bridges between schools and families.",
-    bullets: ["Parent engagement", "Local business connections", "Volunteer programs"],
+    title: "Safe, Secure, and Supported Schools",
+    description: "Safety goes beyond the school doors. Students deserve environments that protect their physical safety, mental health, and digital privacy.",
+    bullets: ["Crisis preparedness and building security", "Proactive mental health support systems", "Cybersecurity policies that safeguard student information"],
     variant: "red" as const
   }
 ];
@@ -48,6 +48,9 @@ const priorities = [
       <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mt-4">
         Priorities for Elkhorn
       </h2>
+      <p class="text-black/70 mt-4 max-w-3xl mx-auto">
+        Through thoughtful conversations with Elkhorn families and community members, Emily has identified five core priorities that will guide her service on the Elkhorn Board of Education.
+      </p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {priorities.map(priority => (
