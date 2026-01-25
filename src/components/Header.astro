@@ -1,5 +1,7 @@
 ---
 import Logo from './Logo.astro';
+
+const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
 
 <nav class="fixed z-(--z-fixed) w-full bg-white shadow-sm">
@@ -12,7 +14,7 @@ import Logo from './Logo.astro';
         <ul class="nav-links hidden md:flex">
             <li><a href="#priorities">Issues</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#endorsements">Endorsements</a></li>
+            {showEndorsements && <li><a href="#endorsements">Endorsements</a></li>}
             <li><a href="#action">Get Involved</a></li>
         </ul>
         <div class="hidden md:flex gap-3">
@@ -37,7 +39,7 @@ import Logo from './Logo.astro';
         <div class="px-(--space-m) py-(--space-s) flex flex-col gap-4">
             <a href="#priorities" class="text-navy font-medium py-2">Issues</a>
             <a href="#about" class="text-navy font-medium py-2">About</a>
-            <a href="#endorsements" class="text-navy font-medium py-2">Endorsements</a>
+            {showEndorsements && <a href="#endorsements" class="text-navy font-medium py-2">Endorsements</a>}
             <a href="#action" class="text-navy font-medium py-2">Get Involved</a>
             <hr class="border-gray-light" />
             <a class="btn btn-outline text-center" href="#action">Volunteer</a>

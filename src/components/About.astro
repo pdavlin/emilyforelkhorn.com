@@ -1,75 +1,116 @@
 ---
-import { Image } from 'astro:assets';
-import emilyBlue from '../assets/images/emily-blue.jpeg';
-import emilyCasual from '../assets/images/emily-casual.jpeg';
-import emilyGreen from '../assets/images/emily-green.jpeg';
+import { Image } from "astro:assets";
+import emilyBlue from "../assets/images/emily-blue.jpeg";
+import emilyCasual from "../assets/images/emily-casual.jpeg";
+import emilyGreen from "../assets/images/emily-green.jpeg";
 
 interface Props {
-  photo?: 'blue' | 'casual' | 'green';
+    photo?: "blue" | "casual" | "green";
 }
 
-const { photo = 'casual' } = Astro.props;
+const { photo = "casual" } = Astro.props;
 
 const photos = {
-  blue: emilyBlue,
-  casual: emilyCasual,
-  green: emilyGreen,
+    blue: emilyBlue,
+    casual: emilyCasual,
+    green: emilyGreen,
 };
 ---
 
 <section id="about" class="py-(--space-3xl) px-(--space-m) bg-white">
-  <div class="max-w-(--container-xl) mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-4 flex justify-center">
-        <div class="relative">
-          <div class="w-64 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden shadow-xl border-4 border-navy">
-            <Image
-              src={photos[photo]}
-              alt="Emily Poeschl"
-              class="w-full h-full object-cover object-top"
-              width={320}
-              height={384}
-            />
-          </div>
-          <div class="absolute -bottom-4 -right-4 bg-red text-white px-4 py-2 rounded font-semibold text-sm shadow-lg">
-            For School Board
-          </div>
-        </div>
-      </div>
+    <div class="max-w-xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <div class="lg:col-span-4 flex justify-center items-baseline">
+                <div class="relative">
+                    <div
+                        class="w-64 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden shadow-xl border-4 border-navy"
+                    >
+                        <Image
+                            src={photos[photo]}
+                            alt="Emily Poeschl"
+                            class="w-full h-full object-cover object-top"
+                            width={320}
+                            height={384}
+                        />
+                    </div>
+                    <div
+                        class="absolute -bottom-4 -right-4 bg-red text-white px-4 py-2 rounded font-semibold text-sm shadow-lg"
+                    >
+                        Emily Poeschl
+                    </div>
+                </div>
+            </div>
 
-      <div class="lg:col-span-8">
-        <span class="text-section-label">Meet the Candidate</span>
-        <h2 class="font-display text-4xl font-bold text-navy mt-4 mb-6">
-          About Emily
-        </h2>
+            <div class="lg:col-span-8">
+                <span class="text-section-label">Meet the Candidate</span>
+                <h2 class="font-display text-4xl font-bold text-navy mt-4 mb-6">
+                    About Emily
+                </h2>
 
-        <div class="prose prose-lg max-w-none text-black/80 space-y-4">
-          <p>
-            Emily Poeschl knows that when we invest in strong public schools, we invest in the future of our community. As a proud public school graduate, she experienced firsthand how equitable access to education creates opportunity for every student. Her commitment to Elkhorn Public Schools is both professional and personal—as the proud aunt to two current EPS students, including one supported through an Individualized Education Plan (IEP).
-          </p>
-          <p>
-            Emily brings deep service and governance experience across local and national boards, with a strong focus on expanding access to education. She serves on the UNO Alumni Association Board and oversees the annual distribution of more than $1 million in scholarship and fellowship funding as a Director of the Delta Gamma Foundation. She also leads community hunger-reduction strategy as Board Chair of Saving Grace Perishable Food Rescue, advances national cancer advocacy through Susan G. Komen, and supports community programs through Women Investing in Nebraska.
-          </p>
-          <p>
-            Professionally, Emily has nearly a decade of combined experience at UNO, serving as an adjunct marketing professor and staff leader driving marketing, government relations, and campus engagement initiatives. Today, she leads strategic brand marketing communications for Mutual of Omaha, including work to inspire the next generation of leaders in conservation through the Emmy-nominated Wild Kingdom brand.
-          </p>
-        </div>
+                <div class="prose prose-lg max-w-none text-black/80 space-y-4">
+                    <p>
+                        Emily Poeschl knows that when we invest in strong public
+                        schools, we invest in the future of our community. As a
+                        proud public school graduate, she experienced firsthand
+                        how equitable access to education creates opportunity
+                        for every student. Her commitment to Elkhorn Public
+                        Schools is both professional and personal—as an engaged
+                        Elkhorn community member and the proud aunt to two
+                        current EPS students, including one supported through an
+                        Individualized Education Plan (IEP).
+                    </p>
+                    <p>
+                        Emily brings deep service and governance experience
+                        across local and national boards, with a strong focus on
+                        expanding access to education. She serves on the
+                        University of Nebraska at Omaha Alumni Association Board
+                        and oversees the annual distribution of more than $1
+                        million in scholarship and fellowship funding as a
+                        Director of the Delta Gamma Foundation. She also
+                        currently leads an innovative community-wide
+                        hunger-reduction strategy as Board Chair of Saving Grace
+                        Perishable Food Rescue, advances national cancer policy
+                        advocacy through Susan G. Komen, and supports community
+                        grant programs through Women Investing in Nebraska.
+                    </p>
+                    <p>
+                        Professionally, Emily has nearly a decade of combined
+                        experience working in education at the University of
+                        Nebraska at Omaha, serving as an adjunct marketing
+                        professor and staff leader driving marketing, government
+                        relations, and campus engagement initiatives. Today, she
+                        leads strategic brand marketing communications at Mutual
+                        of Omaha, including work to inspire the next generation
+                        of conservation leaders through the Emmy-nominated
+                        Mutual of Omaha’s Wild Kingdom brand.
+                    </p>
+                </div>
 
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="bg-cream rounded-lg p-6">
-            <h3 class="font-display font-bold text-navy text-lg mb-2">Education</h3>
-            <p class="text-black/70 text-sm">
-              BSBA from UNL, MBA from UNO, Certificate in Public Health from UNMC
-            </p>
-          </div>
-          <div class="bg-cream rounded-lg p-6">
-            <h3 class="font-display font-bold text-navy text-lg mb-2">Recognition</h3>
-            <p class="text-black/70 text-sm">
-              Nebraska Navy Admiral, Ten Outstanding Young Omahans, AMA and PRSA honors
-            </p>
-          </div>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-cream rounded-lg p-6">
+                        <h3
+                            class="font-display font-bold text-navy text-lg mb-2"
+                        >
+                            Education
+                        </h3>
+                        <p class="text-black/70 text-sm">
+                            BSBA from UNL, MBA from UNO, Certificate in Public
+                            Health from UNMC
+                        </p>
+                    </div>
+                    <div class="bg-cream rounded-lg p-6">
+                        <h3
+                            class="font-display font-bold text-navy text-lg mb-2"
+                        >
+                            Recognition
+                        </h3>
+                        <p class="text-black/70 text-sm">
+                            Nebraska Navy Admiral, Ten Outstanding Young
+                            Omahans, AMA and PRSA honors
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>

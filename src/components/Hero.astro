@@ -1,99 +1,111 @@
 ---
-import { Image } from 'astro:assets';
-import emilyBlue from '../assets/images/emily-blue.jpeg';
+import { Image } from "astro:assets";
+import emilyBlue from "../assets/images/emily-blue.jpeg";
 ---
 
-<section id="hero"
-        class="min-h-screen flex items-center relative overflow-hidden py-20 pt-30 px-6
+<section
+    id="hero"
+    class="min-h-screen flex items-center relative overflow-hidden py-20 pt-30 px-6
                before:content-[''] before:absolute before:top-0 before:right-0 before:w-[55%] before:h-full
                before:bg-navy before:[clip-path:polygon(15%_0,100%_0,100%_100%,0%_100%)] before:z-0
                max-lg:before:hidden
                after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-100 after:h-100
                after:bg-red after:opacity-[0.08] after:rounded-full after:-translate-x-1/2 after:translate-y-1/2 after:z-0
                max-lg:min-h-auto max-lg:py-25 max-lg:px-6 max-lg:bg-cream"
+>
+    <div
+        class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-1"
     >
-        <div
-            class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-1"
-        >
-            <div class="">
-                <div class="mb-6">
-                    <div class="flex items-center gap-3 text-red text-sm font-semibold tracking-widest uppercase mb-1">
-                        <span class="w-8 h-px bg-red"></span>
-                        <span>2026</span>
-                        <span class="w-8 h-px bg-red"></span>
-                    </div>
-                    <p class="text-navy text-sm font-semibold tracking-widest uppercase">
-                        Elkhorn Board of Education
-                    </p>
-                </div>
-                <h1 class="text-5xl font-display font-bold text-navy mb-2 leading-tight">
-                    Emily <span class="text-red">Poeschl</span>
-                </h1>
-                <p
-                    class="font-body text-lg font-semibold tracking-widest uppercase text-navy opacity-70 mb-6"
-                >
-                    for Elkhorn Public Schools
-                </p>
-                <p class="text-xl text-black max-w-[520px] mb-10 leading-relaxed">
-                    Strong schools are the foundation of a strong community.
-                    Emily is running to protect accountable, governance-driven
-                    leadership and educational excellence today—while planning
-                    responsibly for growth and preparing future-ready students
-                    to strengthen Elkhorn tomorrow.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a
-                        href="https://secure.actblue.com/donate/emilyforelkhorn"
-                        class="btn btn-primary w-full sm:w-auto">Donate Today</a
-                    >
-                    <a href="#priorities" class="btn btn-secondary w-full sm:w-auto"
-                        >See Priorities</a
-                    >
-                </div>
-            </div>
-
-            <div class="relative">
+        <div class="">
+            <div class="mb-6">
                 <div
-                    class="rounded-xl overflow-hidden shadow-xl relative
+                    class="flex items-center gap-3 text-red text-sm font-semibold tracking-widest uppercase mb-1"
+                >
+                    <span class="w-8 h-px bg-red"></span>
+                    <span>2026</span>
+                    <span class="w-8 h-px bg-red"></span>
+                </div>
+                <p
+                    class="text-navy text-sm font-semibold tracking-widest uppercase"
+                >
+                    Elkhorn Board of Education
+                </p>
+            </div>
+            <h1
+                class="text-5xl font-display font-bold text-navy mb-2 leading-tight"
+            >
+                Emily Poeschl
+            </h1>
+            <p
+                class="font-body text-lg font-semibold tracking-widest uppercase text-navy mb-6"
+            >
+                for Elkhorn Public Schools
+            </p>
+            <p class="text-xl text-black max-w-[520px] mb-10 leading-relaxed">
+                Strong schools are the foundation of a strong community. Emily
+                is running to protect accountable, governance-driven leadership
+                and educational excellence today—while planning responsibly for
+                growth and preparing future-ready students to strengthen Elkhorn
+                tomorrow.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                    href="https://secure.actblue.com/donate/emilyforelkhorn"
+                    class="btn btn-primary w-full sm:w-auto">Donate Today</a
+                >
+                <a href="#priorities" class="btn btn-secondary w-full sm:w-auto"
+                    >See Priorities</a
+                >
+            </div>
+        </div>
+
+        <div class="relative">
+            <div
+                class="rounded-xl overflow-hidden shadow-xl relative
                            before:content-[''] before:absolute before:-top-5 before:-right-5
                            before:w-30 before:h-30 before:bg-red before:rounded-lg before:-z-1"
-                >
-                    <div class="relative">
-                        <Image
-                            src={emilyBlue}
-                            alt="Emily Poeschl"
-                            class="w-full h-auto"
-                            width={560}
-                            height={700}
-                        />
-                        <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-6">
-                            <div class="text-center mb-4">
-                                <div class="font-body font-bold text-sm tracking-[0.15em] uppercase text-red">
-                                    Strong Schools
-                                    <span class="text-navy"> / Strong Community</span>
-                                </div>
+            >
+                <div class="relative">
+                    <Image
+                        src={emilyBlue}
+                        alt="Emily Poeschl"
+                        class="w-full h-auto"
+                        width={560}
+                        height={700}
+                    />
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-6"
+                    >
+                        <div class="text-center mb-4">
+                            <div
+                                class="font-body font-bold text-sm tracking-[0.15em] uppercase text-navy"
+                            >
+                                Chip in today to support strong schools,
+                                responsible leadership, and a stronger Elkhorn
+                                for the future.
                             </div>
-                            <div class="grid grid-cols-4 gap-2">
-                                <a
-                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=10"
-                                    class="donate-btn text-sm">$10</a
-                                >
-                                <a
-                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=25"
-                                    class="donate-btn text-sm">$25</a
-                                >
-                                <a
-                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=50"
-                                    class="donate-btn text-sm">$50</a
-                                >
-                                <a
-                                    href="https://secure.actblue.com/donate/emilyforelkhorn?amount=100"
-                                    class="donate-btn text-sm">$100</a
-                                >
-                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <a
+                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=10"
+                                class="donate-btn text-sm">$10</a
+                            >
+                            <a
+                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=25"
+                                class="donate-btn text-sm">$25</a
+                            >
+                            <a
+                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=50"
+                                class="donate-btn text-sm">$50</a
+                            >
+                            <a
+                                href="https://secure.actblue.com/donate/emilyforelkhorn?amount=100"
+                                class="donate-btn text-sm">$100</a
+                            >
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

@@ -58,8 +58,8 @@
     /* Step 1: 19.20px -> 25.00px */
     --text-lg: clamp(1.2rem, 1.0682rem + 0.5859vw, 1.5625rem);
 
-    /* Step 2: 23.04px -> 31.25px */
-    --text-xl: clamp(1.44rem, 1.2531rem + 0.8316vw, 1.9531rem);
+    /* Step 2: 23.04px -> 26px */
+    --text-xl: clamp(1.44rem, 1.36rem + 0.34vw, 1.625rem);
 
     /* Step 3: 27.65px -> 39.06px */
     --text-2xl: clamp(1.7281rem, 1.4696rem + 1.1502vw, 2.4413rem);
@@ -295,7 +295,6 @@
     .btn-primary:hover {
         background: var(--color-red-dark);
         transform: translateY(-2px);
-        box-shadow: var(--shadow-red);
     }
 
     .btn-secondary {
@@ -306,7 +305,6 @@
     .btn-secondary:hover {
         background: var(--color-navy-dark);
         transform: translateY(-2px);
-        box-shadow: var(--shadow-navy);
     }
 
     .btn-outline {
@@ -415,20 +413,14 @@
     .priority-card {
         border-radius: var(--radius-xl);
         padding: var(--space-l);
-        transition: transform var(--transition-base), box-shadow var(--transition-base);
+        transition:
+            transform var(--transition-base),
+            box-shadow var(--transition-base);
     }
 
     .priority-card:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-lg);
-    }
-
-    /* Glassmorphism card */
-    .glass-card {
-        backdrop-filter: blur(12px);
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-xl);
     }
 
     /* Smooth scroll for anchor links */

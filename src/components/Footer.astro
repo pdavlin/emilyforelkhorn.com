@@ -8,19 +8,16 @@ const socials = [
 ];
 
 const currentYear = new Date().getFullYear();
+const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
 
 <footer class="bg-navy text-white py-(--space-2xl) px-(--space-m)">
   <div class="max-w-(--container-xl) mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <a href="/" class="inline-block mb-4">
-          <Logo size="md" />
+        <a href="/" class="block">
+          <Logo variant="white" fullWidth />
         </a>
-        <p class="text-white/90 text-sm leading-relaxed">
-          Emily Poeschl for Elkhorn Public Schools Board of Education.
-          Strong schools, strong community.
-        </p>
       </div>
 
       <div>
@@ -28,7 +25,7 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-2">
           <li><a href="#priorities" class="text-white/90 hover:text-white transition-colors text-sm">Issues</a></li>
           <li><a href="#about" class="text-white/90 hover:text-white transition-colors text-sm">About Emily</a></li>
-          <li><a href="#endorsements" class="text-white/90 hover:text-white transition-colors text-sm">Endorsements</a></li>
+          {showEndorsements && <li><a href="#endorsements" class="text-white/90 hover:text-white transition-colors text-sm">Endorsements</a></li>}
           <li><a href="#vote" class="text-white/90 hover:text-white transition-colors text-sm">Voting Info</a></li>
         </ul>
       </div>

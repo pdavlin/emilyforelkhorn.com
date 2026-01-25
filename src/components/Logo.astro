@@ -1,27 +1,20 @@
 ---
-import { Image } from 'astro:assets';
-import logoImage from '../assets/efe-logo.png';
+import logoImage from "../assets/logos/logo.svg?raw";
 
 interface Props {
-  size?: 'sm' | 'md' | 'lg';
+    size?: "sm" | "md" | "lg";
+    variant?: "default" | "white";
+    fullWidth?: boolean;
 }
 
-const { size = 'md' } = Astro.props;
-const heights = { sm: 32, md: 48, lg: 64 };
+const { size = "md", variant = "default", fullWidth = false } = Astro.props;
+const heights = { sm: 32, md: 56, lg: 64 };
 const height = heights[size];
+const colorClass = variant === "white" ? "text-white" : "text-red";
 ---
 
-<Image
-  src={logoImage}
-  alt="Emily for Elkhorn"
-  height={height}
-  class="logo"
-/>
-
-<style>
-  .logo {
-    width: auto;
-    height: auto;
-    max-height: 100%;
-  }
-</style>
+{fullWidth ? (
+    <span class:list={[colorClass, "block w-full [&>svg]:w-full [&>svg]:h-auto"]} set:html={logoImage} />
+) : (
+    <span class:list={[colorClass, "inline-block [&>svg]:h-full [&>svg]:w-auto"]} style={`height: ${height}px;`} set:html={logoImage} />
+)}

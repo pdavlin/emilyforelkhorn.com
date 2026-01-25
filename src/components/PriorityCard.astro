@@ -1,34 +1,74 @@
 ---
 interface Props {
-  number: string;
-  title: string;
-  description: string;
-  bullets: string[];
-  variant: 'navy' | 'red' | 'dark';
-  featured?: boolean;
+    number: string;
+    title: string;
+    description: string;
+    bullets: string[];
+    variant: "navy" | "red" | "dark";
+    featured?: boolean;
 }
 
-const { number, title, description, bullets, variant, featured = false } = Astro.props;
+const {
+    number,
+    title,
+    description,
+    bullets,
+    variant,
+    featured = false,
+} = Astro.props;
 
 const variantClasses = {
-  navy: 'bg-navy text-white',
-  red: 'bg-red text-white',
-  dark: 'bg-black text-white'
+    navy: "bg-navy text-white",
+    red: "bg-red text-white",
+    dark: "bg-black text-white",
+    gold: "bg-gold text-navy",
+};
+
+const variantTextClasses = {
+    navy: "text-white/90",
+    red: "text-white/90",
+    dark: "text-white/90",
+    gold: "text-navy/90",
+};
+
+const variantCheckboxClasses = {
+    navy: "text-gold",
+    red: "text-gold",
+    dark: "text-gold",
+    gold: "text-navy",
 };
 ---
 
-<article class={`priority-card rounded-xl p-8 ${variantClasses[variant]} ${featured ? 'lg:col-span-2' : ''}`}>
-  <span class="text-gold font-display text-5xl font-bold opacity-50">{number}</span>
-  <h3 class="font-display text-2xl font-bold mt-2 mb-4">{title}</h3>
-  <p class="text-white/80 mb-6 leading-relaxed">{description}</p>
-  <ul class="space-y-2">
-    {bullets.map(bullet => (
-      <li class="flex items-start gap-2">
-        <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-white/90">{bullet}</span>
-      </li>
-    ))}
-  </ul>
+<article
+    class={`priority-card rounded-xl p-8 ${variantClasses[variant]} ${featured ? "lg:col-span-2" : ""}`}
+>
+    <h3 class="font-display text-2xl font-bold mb-4">
+        <span
+            class={`${variantCheckboxClasses[variant]} font-display text-5xl font-bold opacity-50 mr-4`}
+            >{number}</span
+        >{title}
+    </h3>
+    <p class={`${variantTextClasses[variant]} mb-6 leading-relaxed`}>
+        {description}
+    </p>
+    <ul class="space-y-2">
+        {
+            bullets.map((bullet) => (
+                <li class="flex items-start gap-2">
+                    <svg
+                        class={`w-5 h-5 ${variantCheckboxClasses[variant]} mt-0.5 shrink-0`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                    <span class={variantTextClasses[variant]}>{bullet}</span>
+                </li>
+            ))
+        }
+    </ul>
 </article>

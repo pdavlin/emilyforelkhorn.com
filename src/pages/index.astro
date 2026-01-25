@@ -1,20 +1,22 @@
 ---
-import Hero from '../components/Hero.astro';
-import Priorities from '../components/Priorities.astro';
-import About from '../components/About.astro';
-import Endorsements from '../components/Endorsements.astro';
-import Action from '../components/Action.astro';
-import VoteCTA from '../components/VoteCTA.astro';
-import Newsletter from '../components/Newsletter.astro';
-import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
+import Priorities from "../components/Priorities.astro";
+import About from "../components/About.astro";
+import Endorsements from "../components/Endorsements.astro";
+import Action from "../components/Action.astro";
+import VoteCTA from "../components/VoteCTA.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Layout from "../layouts/Layout.astro";
+
+const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
 
 <Layout>
-	<Hero />
-	<Priorities />
-	<About />
-	<Endorsements />
-	<Action />
-	<VoteCTA />
-	<Newsletter />
+    <Hero />
+    <Priorities />
+    <About />
+    {showEndorsements && <Endorsements />}
+    <Action />
+    <VoteCTA />
+    <Newsletter />
 </Layout>
