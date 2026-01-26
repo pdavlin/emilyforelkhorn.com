@@ -1,10 +1,16 @@
 ---
-import Logo from './Logo.astro';
-import SocialIcon from './SocialIcon.astro';
+import Logo from "./Logo.astro";
+import SocialIcon from "./SocialIcon.astro";
 
 const socials = [
-  { platform: "facebook" as const, url: "https://facebook.com/emilyforelkhorn" },
-  { platform: "instagram" as const, url: "https://instagram.com/emilyforelkhorn" }
+    {
+        platform: "facebook" as const,
+        url: "https://facebook.com/emilyforelkhorn",
+    },
+    {
+        platform: "instagram" as const,
+        url: "https://instagram.com/emilyforelkhorn",
+    },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -12,63 +18,143 @@ const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
 
 <footer class="bg-navy text-white py-(--space-2xl) px-(--space-m)">
-  <div class="max-w-(--container-xl) mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-      <div>
-        <a href="/" class="block">
-          <Logo variant="white" fullWidth />
-        </a>
-      </div>
+    <div class="max-w-(--container-xl) mx-auto">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+        >
+            <div>
+                <a href="/" class="block">
+                    <Logo variant="white" fullWidth />
+                </a>
+            </div>
 
-      <div>
-        <h3 class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase">Campaign</h3>
-        <ul class="space-y-2">
-          <li><a href="#priorities" class="text-white/90 hover:text-white transition-colors text-sm">Issues</a></li>
-          <li><a href="#about" class="text-white/90 hover:text-white transition-colors text-sm">About Emily</a></li>
-          {showEndorsements && <li><a href="#endorsements" class="text-white/90 hover:text-white transition-colors text-sm">Endorsements</a></li>}
-          <li><a href="#vote" class="text-white/90 hover:text-white transition-colors text-sm">Voting Info</a></li>
-        </ul>
-      </div>
+            <div>
+                <h3
+                    class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase"
+                >
+                    Campaign
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="#priorities"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Issues</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#about"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >About Emily</a>
+                    </li>
+                    {
+                        showEndorsements && (
+                            <li>
+                                <a
+                                    href="#endorsements"
+                                    class="text-white/90 hover:text-white transition-colors text-sm"
+                                >
+                                    Endorsements
+                                </a>
+                            </li>
+                        )
+                    }
+                    <li>
+                        <a
+                            href="#vote"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Voting Info</a>
+                    </li>
+                </ul>
+            </div>
 
-      <div>
-        <h3 class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase">Get Involved</h3>
-        <ul class="space-y-2">
-          <li><a href="https://secure.actblue.com/donate/emilyforelkhorn" class="text-white/90 hover:text-white transition-colors text-sm">Donate</a></li>
-          <li><a href="#action" class="text-white/90 hover:text-white transition-colors text-sm">Volunteer</a></li>
-          <li><a href="#action" class="text-white/90 hover:text-white transition-colors text-sm">Request Yard Sign</a></li>
-          <li><a href="#newsletter" class="text-white/90 hover:text-white transition-colors text-sm">Newsletter</a></li>
-        </ul>
-      </div>
+            <div>
+                <h3
+                    class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase"
+                >
+                    Get Involved
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://secure.actblue.com/donate/emilyforelkhorn"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Donate</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#action"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Volunteer</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#action"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Request Yard Sign</a>
+                    </li>
+                    <li>
+                        <a
+                            href="#newsletter"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                            >Newsletter</a>
+                    </li>
+                </ul>
+            </div>
 
-      <div>
-        <h3 class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase">Contact</h3>
-        <ul class="space-y-2">
-          <li>
-            <a href="mailto:emily@emilyforelkhorn.com" class="text-white/90 hover:text-white transition-colors text-sm">
-              emily@emilyforelkhorn.com
-            </a>
-          </li>
-        </ul>
-        <div class="flex gap-3 mt-6">
-          {socials.map(social => (
-            <SocialIcon platform={social.platform} url={social.url} size="sm" />
-          ))}
+            <div>
+                <h3
+                    class="font-semibold text-gold mb-4 text-sm tracking-wider uppercase"
+                >
+                    Contact
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="mailto:hello@emilyforelkhorn.com"
+                            class="text-white/90 hover:text-white transition-colors text-sm"
+                        >
+                            hello@emilyforelkhorn.com
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex gap-3 mt-6">
+                    {
+                        socials.map((social) => (
+                            <SocialIcon
+                                platform={social.platform}
+                                url={social.url}
+                                size="sm"
+                            />
+                        ))
+                    }
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-white/80 text-sm">
-        &copy; {currentYear} Emily Poeschl for Elkhorn Public Schools. All rights reserved.
-      </p>
-      <div class="flex gap-6">
-        <a href="/privacy" class="text-white/80 hover:text-white text-sm transition-colors">Privacy Policy</a>
-        <a href="/terms" class="text-white/80 hover:text-white text-sm transition-colors">Terms of Use</a>
-      </div>
-    </div>
+        <div
+            class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+            <p class="text-white/80 text-sm">
+                &copy; {currentYear} Emily Poeschl for Elkhorn Public Schools. All
+                rights reserved.
+            </p>
+            <div class="flex gap-6">
+                <a
+                    href="/privacy"
+                    class="text-white/80 hover:text-white text-sm transition-colors"
+                    >Privacy Policy</a
+                >
+                <a
+                    href="/terms"
+                    class="text-white/80 hover:text-white text-sm transition-colors"
+                    >Terms of Use</a
+                >
+            </div>
+        </div>
 
-    <p class="text-white/70 text-xs text-center mt-8">
-      Paid for by Emily Poeschl for Elkhorn Public Schools
-    </p>
-  </div>
+        <p class="text-white/70 text-xs text-center mt-8">
+            Paid for by Emily Poeschl for Elkhorn Public Schools
+        </p>
+    </div>
 </footer>

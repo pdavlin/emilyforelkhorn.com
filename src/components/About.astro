@@ -17,8 +17,13 @@ const photos = {
 };
 ---
 
-<section id="about" class="py-(--space-3xl) px-(--space-m) bg-white">
-    <div class="max-w-xl mx-auto">
+<section
+    id="about"
+    class="py-(--space-3xl) px-(--space-m) bg-white relative overflow-hidden
+           after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-100 after:h-100
+           after:bg-red after:opacity-[0.08] after:rounded-full after:-translate-x-1/2 after:translate-y-1/2 after:z-0"
+>
+    <div class="max-w-xl mx-auto relative z-1">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div class="lg:col-span-4 flex justify-center items-baseline">
                 <div class="relative">
