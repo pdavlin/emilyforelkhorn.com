@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Hoefler Text - Local Font */
+@font-face {
+    font-family: "Hoefler Text";
+    src: url("/fonts/Hoefler Text Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Override Tailwind's cursor reset for interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    cursor: pointer;
+}
+
 @theme {
     /* ================================
    * Colors
@@ -34,11 +53,12 @@
    * Typography - Font Families
    * ================================ */
 
-    --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-display: "Hoefler Text", Georgia, "Times New Roman", serif;
     --font-body: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-callout: "Sofia Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     /* Legacy aliases */
-    --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-serif: "Hoefler Text", Georgia, "Times New Roman", serif;
     --font-sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     /* ================================
@@ -275,7 +295,7 @@
         align-items: center;
         justify-content: center;
         padding: 12px 28px;
-        font-family: var(--font-body);
+        font-family: var(--font-callout);
         font-weight: var(--font-weight-semibold);
         font-size: var(--text-sm);
         letter-spacing: var(--tracking-wider);
@@ -342,6 +362,7 @@
         letter-spacing: 0.02em;
         transition: color 0.2s ease;
         position: relative;
+        cursor: pointer;
     }
 
     .nav-links a:hover::after {
@@ -356,6 +377,30 @@
         width: 0px;
         height: 2px;
         background: var(--color-red);
+        transition: width 0.3s;
+    }
+
+    .footer-nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: var(--text-sm);
+        transition: color 0.2s ease;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .footer-nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .footer-nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+        width: 0px;
+        height: 2px;
+        background: var(--color-white);
         transition: width 0.3s;
     }
 
@@ -442,12 +487,14 @@
 @layer utilities {
     /* Text styles */
     .text-caps {
+        font-family: var(--font-callout);
         text-transform: uppercase;
         letter-spacing: var(--tracking-caps);
         font-weight: var(--font-weight-semibold);
     }
 
     .text-section-label {
+        font-family: var(--font-callout);
         font-size: var(--text-sm);
         font-weight: var(--font-weight-bold);
         letter-spacing: var(--tracking-caps-wide);

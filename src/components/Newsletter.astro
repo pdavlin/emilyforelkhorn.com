@@ -1,41 +1,55 @@
 ---
-import SocialIcon from './SocialIcon.astro';
+import SocialIcon from "./SocialIcon.astro";
 
 const socials = [
-  { platform: "facebook" as const, url: "https://facebook.com/emilyforelkhorn" },
-  { platform: "instagram" as const, url: "https://instagram.com/emilyforelkhorn" }
+    {
+        platform: "facebook" as const,
+        url: "https://facebook.com/emilyforelkhorn",
+    },
+    {
+        platform: "instagram" as const,
+        url: "https://instagram.com/emilyforelkhorn",
+    },
 ];
 ---
 
 <section id="newsletter" class="py-(--space-2xl) px-(--space-m) bg-cream">
-  <div class="max-w-(--container-md) mx-auto text-center">
-    <h2 class="font-display text-3xl font-bold text-navy mb-4">
-      Stay Connected
-    </h2>
-    <p class="text-black/70 mb-8">
-      Sign up for campaign updates and news from Emily.
-    </p>
+    <div class="max-w-(--container-md) mx-auto text-center">
+        <h2 class="font-display text-3xl font-bold text-navy mb-4">
+            Stay Connected
+        </h2>
+        <p class="text-black/70 mb-8">
+            Sign up for campaign updates and news from Emily.
+        </p>
 
-    <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-10">
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-        class="flex-1 px-4 py-3 rounded-md border border-gray-light bg-white text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent"
-      />
-      <button type="submit" class="btn btn-primary whitespace-nowrap">
-        Subscribe
-      </button>
-    </form>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-10">
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                class="flex-1 px-4 py-3 rounded-md border border-gray-light bg-white text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent"
+            />
+            <a
+                href="mailto:hello@emilyforelkhorn.com?subject=Subscribe"
+                class="btn btn-primary whitespace-nowrap"
+            >
+                Subscribe
+            </a>
+        </form>
 
-    <div class="border-t border-gray-light pt-8">
-      <p class="text-sm text-black/60 mb-4">Follow the campaign</p>
-      <div class="flex justify-center gap-4">
-        {socials.map(social => (
-          <SocialIcon platform={social.platform} url={social.url} />
-        ))}
-      </div>
+        <div class="border-t border-gray-light pt-8">
+            <p class="text-sm text-black/60 mb-4">Follow the campaign</p>
+            <div class="flex justify-center gap-4">
+                {
+                    socials.map((social) => (
+                        <SocialIcon
+                            platform={social.platform}
+                            url={social.url}
+                        />
+                    ))
+                }
+            </div>
+        </div>
     </div>
-  </div>
 </section>
