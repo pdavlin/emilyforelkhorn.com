@@ -1,5 +1,5 @@
 ---
-import Logo from './Logo.astro';
+import Logo from "./Logo.astro";
 
 const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
@@ -14,12 +14,22 @@ const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
         <ul class="nav-links hidden md:flex">
             <li><a href="#priorities">Issues</a></li>
             <li><a href="#about">About</a></li>
-            {showEndorsements && <li><a href="#endorsements">Endorsements</a></li>}
+            {
+                showEndorsements && (
+                    <li>
+                        <a href="#endorsements">Endorsements</a>
+                    </li>
+                )
+            }
             <li><a href="#action">Get Involved</a></li>
         </ul>
         <div class="hidden md:flex gap-3">
             <a class="btn btn-outline" href="#action">Volunteer</a>
-            <a class="btn btn-primary" href="https://secure.actblue.com/donate/emilyforelkhorn">Donate</a>
+            <a
+                class="btn btn-primary"
+                href="https://secure.actblue.com/donate/emilyforelkhorn"
+                >Donate</a
+            >
         </div>
         <button
             id="mobile-menu-btn"
@@ -27,47 +37,79 @@ const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
             aria-label="Toggle menu"
             aria-expanded="false"
         >
-            <svg class="hamburger-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+                class="hamburger-icon w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
-            <svg class="close-icon w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <svg
+                class="close-icon w-6 h-6 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-light">
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-light"
+    >
         <div class="px-(--space-m) py-(--space-s) flex flex-col gap-4">
             <a href="#priorities" class="text-navy font-medium py-2">Issues</a>
             <a href="#about" class="text-navy font-medium py-2">About</a>
-            {showEndorsements && <a href="#endorsements" class="text-navy font-medium py-2">Endorsements</a>}
-            <a href="#action" class="text-navy font-medium py-2">Get Involved</a>
+            {
+                showEndorsements && (
+                    <a href="#endorsements" class="text-navy font-medium py-2">
+                        Endorsements
+                    </a>
+                )
+            }
+            <a href="#action" class="text-navy font-medium py-2">Get Involved</a
+            >
             <hr class="border-gray-light" />
             <a class="btn btn-outline text-center" href="#action">Volunteer</a>
-            <a class="btn btn-primary text-center" href="https://secure.actblue.com/donate/emilyforelkhorn">Donate</a>
+            <a
+                class="btn btn-primary text-center"
+                href="https://secure.actblue.com/donate/emilyforelkhorn"
+                >Donate</a
+            >
         </div>
     </div>
 </nav>
 
 <script>
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const hamburgerIcon = btn?.querySelector('.hamburger-icon');
-    const closeIcon = btn?.querySelector('.close-icon');
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const hamburgerIcon = btn?.querySelector(".hamburger-icon");
+    const closeIcon = btn?.querySelector(".close-icon");
 
-    btn?.addEventListener('click', () => {
-        const isOpen = menu?.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        hamburgerIcon?.classList.toggle('hidden');
-        closeIcon?.classList.toggle('hidden');
+    btn?.addEventListener("click", () => {
+        const isOpen = menu?.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        hamburgerIcon?.classList.toggle("hidden");
+        closeIcon?.classList.toggle("hidden");
     });
 
     // Close menu when clicking a link
-    menu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            btn?.setAttribute('aria-expanded', 'false');
-            hamburgerIcon?.classList.remove('hidden');
-            closeIcon?.classList.add('hidden');
+    menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            btn?.setAttribute("aria-expanded", "false");
+            hamburgerIcon?.classList.remove("hidden");
+            closeIcon?.classList.add("hidden");
         });
     });
 </script>
