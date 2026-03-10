@@ -1,12 +1,15 @@
 ---
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   name: string;
   title?: string;
-  icon: 'education' | 'person' | 'group' | 'business';
+  icon?: 'education' | 'person' | 'group' | 'business';
+  logo?: ImageMetadata;
   placeholder?: boolean;
 }
 
-const { name, title, icon, placeholder = false } = Astro.props;
+const { name, title, icon, logo, placeholder = false } = Astro.props;
 
 const icons = {
   education: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />`,
@@ -16,7 +19,12 @@ const icons = {
 };
 ---
 
-<div class={`endorsement-card bg-white rounded-lg p-6 shadow-sm flex items-center gap-4 ${placeholder ? 'border-2 border-dashed border-gray-light' : 'border border-gray-light'}`}>
+{logo ? (
+<div class="endorsement-card bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-light h-full overflow-hidden">
+  <img src={logo.src} alt={name} class="w-full h-full object-contain" />
+</div>
+) : icon ? (
+<div class={`endorsement-card bg-white rounded-lg p-6 shadow-sm flex items-center gap-4 h-full ${placeholder ? 'border-2 border-dashed border-gray-light' : 'border border-gray-light'}`}>
   <div class={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${placeholder ? 'bg-gray-light' : 'bg-navy/10'}`}>
     <svg class={`w-6 h-6 ${placeholder ? 'text-navy/30' : 'text-navy'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <Fragment set:html={icons[icon]} />
@@ -27,3 +35,4 @@ const icons = {
     {title && <p class="text-sm text-black/60">{title}</p>}
   </div>
 </div>
+) : null}

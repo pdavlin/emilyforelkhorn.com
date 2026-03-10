@@ -1,12 +1,13 @@
 ---
 import EndorsementCard from './EndorsementCard.astro';
+import wwrLogo from '../assets/logos/WWR-Logo.svg';
 
 const endorsements = [
-  { name: "Elkhorn Education Association", icon: "education" as const },
-  { name: "Community Leader", title: "Name Coming Soon", icon: "person" as const, placeholder: true },
-  { name: "Local Business Owner", title: "Name Coming Soon", icon: "business" as const, placeholder: true },
-  { name: "Parent Volunteer", title: "Name Coming Soon", icon: "person" as const, placeholder: true },
-  { name: "Neighborhood Association", title: "Name Coming Soon", icon: "group" as const, placeholder: true },
+  { name: "Women Who Run", logo: wwrLogo },
+  // { name: "Elkhorn Education Association", icon: "education" as const },
+  // { name: "Community Leader", title: "Name Coming Soon", icon: "person" as const, placeholder: true },
+  // { name: "Local Business Owner", title: "Name Coming Soon", icon: "business" as const, placeholder: true },
+  // { name: "Neighborhood Association", title: "Name Coming Soon", icon: "group" as const, placeholder: true },
   { name: "Your Name Here", title: "Endorse Emily", icon: "person" as const, placeholder: true },
 ];
 ---
@@ -23,7 +24,7 @@ const endorsements = [
         who share her vision for Elkhorn Public Schools.
       </p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[var(--space-3xl)]">
       {endorsements.map(endorsement => (
         <EndorsementCard {...endorsement} />
       ))}

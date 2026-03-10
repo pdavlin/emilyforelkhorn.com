@@ -8,14 +8,13 @@ import VoteCTA from "../components/VoteCTA.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Layout from "../layouts/Layout.astro";
 
-const showEndorsements = import.meta.env.PUBLIC_SHOW_ENDORSEMENTS === "true";
 ---
 
 <Layout>
     <Hero />
     <Priorities />
     <About />
-    {showEndorsements && <Endorsements />}
+    <Endorsements />
     <Action />
     <VoteCTA />
     <Newsletter />
