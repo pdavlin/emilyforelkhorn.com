@@ -14,5 +14,11 @@
     "astro": "^6.0.0-beta.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
