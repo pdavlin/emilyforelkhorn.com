@@ -1,6 +1,7 @@
 ---
 import EndorsementCard from './EndorsementCard.astro';
 import wwrLogo from '../assets/logos/WWR-Logo.svg';
+import gunSenseBadge from '../assets/logos/gun_sense_candidate.png';
 
 const endorsements = [
   { name: "Women Who Run", logo: wwrLogo },
@@ -33,6 +34,31 @@ const endorsements = [
       <a href="mailto:emily@emilyforelkhorn.com?subject=Endorsement" class="btn btn-outline">
         Add Your Endorsement
       </a>
+    </div>
+
+    <div class="mt-(--space-xl) bg-white rounded-lg border border-gray-light shadow-sm px-6 py-5 flex items-center gap-6">
+      <div class="flex-1">
+        <p class="text-navy font-semibold text-lg">
+          2026 Moms Demand Action Gun Sense Candidate
+        </p>
+        <p class="text-black/70 text-sm mt-1">
+          The Gun Sense Candidate distinction signals to voters that, if elected, Emily will
+          govern with gun safety in mind.
+        </p>
+        <a
+          href="https://gunsensevoter.org/candidates/?usState=NE&electionYear=2026&officeLevel=local&isArchive=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-red text-sm font-semibold mt-2 inline-block hover:underline"
+        >
+          View Nebraska candidates &rarr;
+        </a>
+      </div>
+      <img
+        src={gunSenseBadge.src}
+        alt="2026 Moms Demand Action Gun Sense Candidate badge"
+        class="w-24 h-24 shrink-0 object-contain"
+      />
     </div>
   </div>
 </section>
