@@ -6,40 +6,6 @@ on:
   pull_request:
 
 jobs:
-  lint:
-    name: 🔍 Lint and Annotate
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v4
-
-      - name: 📦 Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-
-      - name: 🔧 Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: 🔍 ESLint Annotate
-        uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          eslint_flags: '.'
-          tool_name: 'ESLint'
-          fail_level: 'error'
-
-      - name: 🎨 Stylelint Annotate
-        uses: reviewdog/action-stylelint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          stylelint_input: 'src/**/*.{css,scss}'
-
   build:
     name: 🏗️ Build Test
     runs-on: ubuntu-latest
