@@ -5,16 +5,25 @@ interface Props {
   name: string;
   title?: string;
   logo?: ImageMetadata;
+  href?: string;
+  logoBg?: string;
   placeholder?: boolean;
 }
 
-const { name, title, logo, placeholder = false } = Astro.props;
+const { name, title, logo, href, logoBg, placeholder = false } = Astro.props;
+const LogoWrapper = href ? 'a' : 'div';
 ---
 
 {logo ? (
-<div class="endorsement-card bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-light h-full overflow-hidden">
+<LogoWrapper
+  href={href}
+  target={href ? '_blank' : undefined}
+  rel={href ? 'noopener noreferrer' : undefined}
+  class="endorsement-card bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-light h-full overflow-hidden"
+  style={logoBg ? `background-color: ${logoBg}` : undefined}
+>
   <img src={logo.src} alt={name} class="w-full h-full object-contain" />
-</div>
+</LogoWrapper>
 ) : (
 <div class={`endorsement-card bg-white rounded-lg p-6 shadow-sm flex items-center h-full ${placeholder ? 'border-2 border-dashed border-gray-light' : 'border border-gray-light'}`}>
   <div>
