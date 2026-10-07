@@ -7,10 +7,11 @@ interface Props {
   logo?: ImageMetadata;
   href?: string;
   logoBg?: string;
+  logoPadding?: boolean;
   placeholder?: boolean;
 }
 
-const { name, title, logo, href, logoBg, placeholder = false } = Astro.props;
+const { name, title, logo, href, logoBg, logoPadding = false, placeholder = false } = Astro.props;
 const LogoWrapper = href ? 'a' : 'div';
 ---
 
@@ -19,7 +20,7 @@ const LogoWrapper = href ? 'a' : 'div';
   href={href}
   target={href ? '_blank' : undefined}
   rel={href ? 'noopener noreferrer' : undefined}
-  class="endorsement-card bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-light h-full overflow-hidden"
+  class={`endorsement-card bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-light h-full overflow-hidden ${logoPadding ? 'py-3' : ''}`}
   style={logoBg ? `background-color: ${logoBg}` : undefined}
 >
   <img src={logo.src} alt={name} class="w-full h-full object-contain" />
